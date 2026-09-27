@@ -26,42 +26,48 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-white">
-      <div className="container-custom">
+    <section id="contact" className="py-20 md:py-28 bg-gray-950 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-20 left-0 w-96 h-96 bg-blue-900/10 rounded-full blur-[100px] z-0" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-900/10 rounded-full blur-[100px] z-0" />
+
+      <div className="container-custom relative z-10">
         <SectionTitle
           subtitle="Get in touch"
           title="Contact Me"
           description="Have a project in mind? Let's work together!"
         />
 
-        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-          {/* Info */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-gray-900">
-              Let's talk about your project
-            </h3>
-            <p className="text-gray-600">
-              I'm always open to discussing new projects, creative ideas, or
-              opportunities to be part of your vision.
-            </p>
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mt-12">
+          {/* Info Side */}
+          <div className="space-y-8 animate-slide-up">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-3">
+                Let's talk about your project
+              </h3>
+              <p className="text-gray-400 leading-relaxed">
+                I'm always open to discussing new projects, creative ideas, or
+                opportunities to be part of your vision.
+              </p>
+            </div>
 
-            <div className="space-y-4 pt-4">
+            <div className="space-y-6">
               {contactInfo.map(({ icon: Icon, label, value, href }) => (
-                <div key={label} className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-100 rounded-lg">
-                    <Icon className="text-blue-600" size={20} />
+                <div key={label} className="flex items-center gap-5 group">
+                  <div className="p-4 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm group-hover:bg-blue-500/10 group-hover:border-blue-500/30 transition-all duration-300">
+                    <Icon className="text-blue-400" size={24} />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 font-medium">{label}</p>
+                    <p className="text-sm text-gray-400 font-medium mb-1">{label}</p>
                     {href ? (
                       <a
                         href={href}
-                        className="text-gray-900 font-semibold hover:text-blue-600 transition-colors"
+                        className="text-white font-semibold hover:text-blue-400 transition-colors text-lg"
                       >
                         {value}
                       </a>
                     ) : (
-                      <p className="text-gray-900 font-semibold">{value}</p>
+                      <p className="text-white font-semibold text-lg">{value}</p>
                     )}
                   </div>
                 </div>
@@ -69,10 +75,14 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Form Side (Glassmorphism Card) */}
+          <form 
+            onSubmit={handleSubmit} 
+            className="space-y-5 bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm animate-slide-up"
+            style={{ animationDelay: '0.2s' }}
+          >
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Name
               </label>
               <input
@@ -81,12 +91,13 @@ export default function Contact() {
                 required
                 value={form.name}
                 onChange={handleChange}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                className="w-full px-4 py-3 bg-gray-900/50 rounded-xl border border-white/10 text-white placeholder:text-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all"
                 placeholder="Your name"
               />
             </div>
+            
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Email
               </label>
               <input
@@ -95,12 +106,13 @@ export default function Contact() {
                 required
                 value={form.email}
                 onChange={handleChange}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                className="w-full px-4 py-3 bg-gray-900/50 rounded-xl border border-white/10 text-white placeholder:text-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all"
                 placeholder="your@email.com"
               />
             </div>
+            
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Message
               </label>
               <textarea
@@ -109,11 +121,12 @@ export default function Contact() {
                 rows={5}
                 value={form.message}
                 onChange={handleChange}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all resize-none"
+                className="w-full px-4 py-3 bg-gray-900/50 rounded-xl border border-white/10 text-white placeholder:text-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all resize-none"
                 placeholder="Tell me about your project..."
               />
             </div>
-            <Button type="submit" size="lg" className="w-full">
+            
+            <Button type="submit" size="lg" className="w-full shadow-[0_0_20px_rgba(59,130,246,0.3)] mt-2">
               <Send size={18} />
               {submitted ? 'Message Sent!' : 'Send Message'}
             </Button>

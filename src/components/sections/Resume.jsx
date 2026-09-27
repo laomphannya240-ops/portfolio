@@ -28,66 +28,74 @@ const education = [
 
 export default function Resume() {
   return (
-    <section id="resume" className="py-20 md:py-28 bg-gray-50">
-      <div className="container-custom">
+    <section id="resume" className="py-20 md:py-28 bg-gray-950 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-20 right-0 w-96 h-96 bg-blue-900/10 rounded-full blur-[100px] z-0" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-900/10 rounded-full blur-[100px] z-0" />
+
+      <div className="container-custom relative z-10">
         <SectionTitle
           subtitle="My journey"
           title="Resume / CV"
           description="My professional experience and education"
         />
 
-        <div className="flex justify-center mb-12">
-          <Button href="/resume.pdf" size="lg" download>
+        <div className="flex justify-center mt-8 mb-16">
+          <Button href="/resume.pdf" size="lg" download className="shadow-[0_0_20px_rgba(59,130,246,0.3)]">
             <Download size={20} />
             Download Resume
           </Button>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {/* Experience */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2.5 bg-blue-100 rounded-lg">
-                <Briefcase className="text-blue-600" size={22} />
+          <div className="animate-slide-up">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-xl backdrop-blur-sm">
+                <Briefcase className="text-blue-400" size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Experience</h3>
+              <h3 className="text-2xl font-bold text-white">Experience</h3>
             </div>
-            <div className="space-y-4">
+            
+            <div className="space-y-6">
               {experience.map((item, i) => (
                 <Card key={i}>
-                  <span className="text-sm text-blue-600 font-semibold">
+                  <span className="text-sm text-blue-400 font-semibold tracking-wide">
                     {item.period}
                   </span>
-                  <h4 className="text-lg font-bold text-gray-900 mt-1">
+                  <h4 className="text-xl font-bold text-white mt-2 mb-1">
                     {item.role}
                   </h4>
-                  <p className="text-gray-600 text-sm font-medium mb-2">
+                  <p className="text-gray-400 text-sm font-medium mb-3">
                     {item.company}
                   </p>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    {item.description}
+                  </p>
                 </Card>
               ))}
             </div>
           </div>
 
           {/* Education */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2.5 bg-blue-100 rounded-lg">
-                <GraduationCap className="text-blue-600" size={22} />
+          <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl backdrop-blur-sm">
+                <GraduationCap className="text-purple-400" size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Education</h3>
+              <h3 className="text-2xl font-bold text-white">Education</h3>
             </div>
-            <div className="space-y-4">
+            
+            <div className="space-y-6">
               {education.map((item, i) => (
                 <Card key={i}>
-                  <span className="text-sm text-blue-600 font-semibold">
+                  <span className="text-sm text-purple-400 font-semibold tracking-wide">
                     {item.period}
                   </span>
-                  <h4 className="text-lg font-bold text-gray-900 mt-1">
+                  <h4 className="text-xl font-bold text-white mt-2 mb-1">
                     {item.degree}
                   </h4>
-                  <p className="text-gray-600 text-sm font-medium">
+                  <p className="text-gray-400 text-sm font-medium">
                     {item.school}
                   </p>
                 </Card>
