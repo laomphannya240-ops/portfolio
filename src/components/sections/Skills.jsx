@@ -1,72 +1,55 @@
 import SectionTitle from '../ui/SectionTitle';
-import Card from '../ui/Card';
 import { skills } from '../../data/skills';
 
 export default function Skills() {
-  const categories = [...new Set(skills.map((s) => s.category))];
-
   return (
-    <section id="skills" className="py-20 md:py-28 bg-gray-950 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-20 right-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-[100px] z-0" />
-      <div className="absolute bottom-20 left-1/4 w-96 h-96 bg-purple-900/10 rounded-full blur-[100px] z-0" />
-
-      <div className="container-custom relative z-10">
+    <section id="skills" className="py-20 md:py-28 bg-[#0B0F19] relative overflow-hidden">
+      <div className="container-custom relative z-10 mx-auto px-4 md:px-8">
+        
         <SectionTitle
-          subtitle="What I know"
-          title="Skills & Expertise"
-          description="Technologies and tools I work with on a daily basis"
+          subtitle="Technologies I Master"
+          title="MY SKILLS"
         />
 
-        <div className="space-y-12 mt-12 ">
-          {categories.map((category) => (
-            <div key={category} className="animate-slide-up ">
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-6 border-b border-white/10 pb-3">
-                {category}
-              </h3>
-              
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 ">
-                {skills
-                  .filter((s) => s.category === category)
-                  .map((skill) => {
-                    // ទាញយក Icon ពី Data មកប្រើជា Component
-                    const Icon = skill.icon;
-                    
-                    return (
-                      <Card key={skill.name}>
-                        <div className="flex justify-between items-center mb-3 ">
-                          
-                          {/* ផ្នែកខាងឆ្វេងមាន Icon និង ឈ្មោះ */}
-                          <div className="flex items-center gap-3">
-                            {/* បើមាន Icon នោះវានឹងបង្ហាញនៅទីនេះ */}
-                            {Icon && (
-                              <Icon className="w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors" />
-                            )}
-                            <span className="font-medium text-gray-200">
-                              {skill.name}
-                            </span>
-                          </div>
-                          
-                          {/* ភាគរយ */}
-                          <span className="text-sm text-blue-400 font-semibold">
-                            {skill.level}%
-                          </span>
-                        </div>
-
-                        <div className="w-full h-2.5 bg-gray-800 rounded-full overflow-hidden border border-white/5">
-                          <div
-                            className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all duration-1000 shadow-[0_0_10px_rgba(59,130,246,0.5)] relative"
-                            style={{ width: `${skill.level}%` }}
-                          >
-                            <div className="absolute top-0 right-0 bottom-0 w-2 bg-white/30 blur-[2px]" />
-                          </div>
-                        </div>
-                      </Card>
-                    );
-                  })}
+        {/* ប្រើ Grid 3 ជួរសម្រាប់ Desktop ដូចក្នុងរូបភាព */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 mt-16 max-w-6xl mx-auto">
+          {skills.map((skill) => {
+            const Icon = skill.icon;
+            
+            return (
+              <div key={skill.name} className="flex items-center gap-5">
+                
+                {/* ផ្នែកខាងឆ្វេង: Icon (ប្រើពណ៌ដើមរបស់ Icon ប្រសិនបើមាន) */}
+                {Icon && (
+                  <div className="flex-shrink-0">
+                   <Icon className={`w-10 h-10 md:w-12 md:h-12 ${skill.color || 'text-white'}`} />
+                  </div>
+                )}
+                
+                {/* ផ្នែកខាងស្តាំ: ឈ្មោះ ភាគរយ និង Progress Bar */}
+                <div className="flex-1">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-semibold text-white text-base">
+                      {skill.name}
+                    </span>
+                    <span className="text-sm font-medium text-gray-300">
+                      {skill.level}%
+                    </span>
+                  </div>
+                  
+                  {/* Background របស់ Progress bar */}
+                  <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                    {/* ខ្សែពណ៌ស្វាយរបស់ Progress Bar */}
+                    <div
+                      className="h-full bg-indigo-500 rounded-full transition-all duration-1000"
+                      style={{ width: `${skill.level}%` }}
+                    />
+                  </div>
+                </div>
+                
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

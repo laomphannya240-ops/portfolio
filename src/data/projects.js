@@ -5,7 +5,7 @@ export const projects = [
     description:
       'A full-featured e-commerce platform with payment integration, admin dashboard, and order management.',
     tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    image: '/images/projects/ecommerce.jpg',
+    image: '/images/phannya.jpg',
     github: 'https://github.com',
     live: 'https://example.com',
   },
@@ -15,7 +15,7 @@ export const projects = [
     description:
       'Real-time collaborative task management application with drag-and-drop functionality.',
     tech: ['React', 'Firebase', 'Tailwind CSS'],
-    image: '/images/projects/taskapp.jpg',
+    image: '/images/pic_yaya.jpg',
     github: 'https://github.com',
     live: 'https://example.com',
   },
@@ -25,7 +25,7 @@ export const projects = [
     description:
       'Beautiful weather dashboard with location-based forecasts and interactive charts.',
     tech: ['React', 'OpenWeather API', 'Chart.js'],
-    image: '/images/projects/weather.jpg',
+    image: '/images/yaBlack.jpg',
     github: 'https://github.com',
     live: 'https://example.com',
   },

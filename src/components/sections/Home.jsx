@@ -1,5 +1,6 @@
 import { ArrowDown, Mail } from 'lucide-react';
 import Button from '../ui/Button';
+import TypingText from '../../styles/TypingText';
 
 export default function Home() {
   return (
@@ -16,14 +17,14 @@ export default function Home() {
         {/* Left: Text */}
         <div className="text-center md:text-left animate-slide-up">
           {/* Glassmorphism Badge */}
-          <span className="inline-block text-sm font-semibold text-blue-300 bg-blue-900/40 border border-blue-500/30 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
+          <span className="text-xl md:text-2xl lg:text-3xl inline-block text-sm font-semibold text-blue-300 bg-blue-900/40 border border-blue-500/30 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
             Hello, I'm
           </span>
           
           {/* ពណ៌អក្សរឈ្មោះ (Gradient ភ្លឺលើផ្ទៃងងឹត) */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
             <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              Laom Phannya
+              <TypingText text="Laom Phannya" />
             </span>
           </h1>
           
