@@ -29,7 +29,7 @@ export default function Home() {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-xl">
-            Full-Stack Developer crafting beautiful &amp; functional web experiences
+            Computer Science Student & Junior Web Developer building modern web applications with Laravel, React, Tailwind CSS, and PostgreSQL.
           </p>
 
           <div className="flex flex-wrap justify-center md:justify-start gap-4">

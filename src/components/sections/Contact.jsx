@@ -76,7 +76,7 @@ export default function Contact() {
           </div>
 
           {/* Form Side (Glassmorphism Card) */}
-          <form 
+          <form action="https://formspree.io/f/xyezbqdp" method="POST"
             onSubmit={handleSubmit} 
             className="space-y-5 bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm animate-slide-up"
             style={{ animationDelay: '0.2s' }}

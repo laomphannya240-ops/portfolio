@@ -1,22 +1,22 @@
 export const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
+    title: 'E-Commerce Shoes Store',
     description:
-      'A full-featured e-commerce platform with payment integration, admin dashboard, and order management.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    image: '/images/phannya.jpg',
-    github: 'https://github.com',
-    live: 'https://example.com',
+      'A full-featured e-commerce platform with shopping cart,view product details, and secure checkout using Stripe.',
+    tech: ['Tailwind CSS', 'JavaScript', 'Reach'],
+    image: '/images/picDemoShoes.png',
+    github: 'https://github.com/laomphannya240-ops/shoes_store',
+    live: 'https://shoes-store-q3ky.vercel.app/',
   },
   {
     id: 2,
-    title: 'Task Management App',
+    title: 'Student Management System',
     description:
-      'Real-time collaborative task management application with drag-and-drop functionality.',
-    tech: ['React', 'Firebase', 'Tailwind CSS'],
-    image: '/images/pic_yaya.jpg',
-    github: 'https://github.com',
+      'A school management system built with Laravel API, PostgreSQL, React, and Tailwind CSS for managing students, teachers, classes, attendance, and scores.',
+    tech: ['React', 'Tailwind CSS', 'Laravel', 'PostgreSQL'],
+    image: '/images/studentClass.jpg',
+    github: 'https://github.com/laomphannya240-ops/Student_manager_system',
     live: 'https://example.com',
   },
   {
