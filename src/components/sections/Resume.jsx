@@ -1,31 +1,30 @@
-
-import { Download, Briefcase, GraduationCap } from 'lucide-react';
-import SectionTitle from '../ui/SectionTitle';
-import Button from '../ui/Button';
-import Card from '../ui/Card';
+import { Download, Briefcase, GraduationCap, View, ViewIcon } from "lucide-react";
+import SectionTitle from "../ui/SectionTitle";
+import Button from "../ui/Button";
+import Card from "../ui/Card";
 
 const experience = [
   {
-    role: 'Web Development Intern',
-    company: 'Internship',
-    period: '2026',
+    role: "Web Development Intern",
+    company: "Internship",
+    period: "2026",
     description:
-      'Worked on frontend development and learned practical web development workflows, GitHub, teamwork, and collaborative problem-solving.',
+      "Worked on frontend development and learned practical web development workflows, GitHub, teamwork, and collaborative problem-solving.",
   },
   {
-    role: 'Web Development Projects',
-    company: 'Personal & Academic Projects',
-    period: '2025 - Present',
+    role: "Web Development Projects",
+    company: "Personal & Academic Projects",
+    period: "2025 - Present",
     description:
-      'Built web projects using HTML, CSS, JavaScript, React, Tailwind CSS, PHP, Laravel, REST APIs, and databases.',
+      "Built web projects using HTML, CSS, JavaScript, React, Tailwind CSS, PHP, Laravel, REST APIs, and databases.",
   },
 ];
 
 const education = [
   {
-    degree: 'Bachelor of Computer Science',
-    school: 'Royal University of Phnom Penh (RUPP)',
-    period: '2025 - Present',
+    degree: "Bachelor of Computer Science",
+    school: "Royal University of Phnom Penh (RUPP)",
+    period: "2025 - Present",
   },
 ];
 
@@ -48,13 +47,14 @@ export default function Resume() {
 
         <div className="flex justify-center mt-8 mb-16">
           <Button
-            href="/resume.pdf"
+            href="pdf/mycv.pdf.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             size="lg"
-            download
             className="shadow-[0_0_20px_rgba(59,130,246,0.3)]"
           >
-            <Download size={20} />
-            Download Resume
+            <ViewIcon size={20} />
+            View Resume
           </Button>
         </div>
 
@@ -66,9 +66,7 @@ export default function Resume() {
                 <Briefcase className="text-blue-400" size={24} />
               </div>
 
-              <h3 className="text-2xl font-bold text-white">
-                Experience
-              </h3>
+              <h3 className="text-2xl font-bold text-white">Experience</h3>
             </div>
 
             <div className="space-y-6">
@@ -95,21 +93,13 @@ export default function Resume() {
           </div>
 
           {/* Education */}
-          <div
-            className="animate-slide-up"
-            style={{ animationDelay: '0.2s' }}
-          >
+          <div className="animate-slide-up" style={{ animationDelay: "0.2s" }}>
             <div className="flex items-center gap-4 mb-8">
               <div className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl backdrop-blur-sm">
-                <GraduationCap
-                  className="text-purple-400"
-                  size={24}
-                />
+                <GraduationCap className="text-purple-400" size={24} />
               </div>
 
-              <h3 className="text-2xl font-bold text-white">
-                Education
-              </h3>
+              <h3 className="text-2xl font-bold text-white">Education</h3>
             </div>
 
             <div className="space-y-6">
@@ -135,4 +125,3 @@ export default function Resume() {
     </section>
   );
 }
-

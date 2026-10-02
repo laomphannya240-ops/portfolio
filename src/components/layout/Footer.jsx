@@ -17,13 +17,13 @@ const Twitter = ({ size = 20 }) => (
 );
 
 import { Mail } from 'lucide-react';
+import { FaFacebook } from 'react-icons/fa';
 
 export default function Footer() {
   const socials = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:hello@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/laomphannya240-ops', label: 'GitHub' }, 
+    { icon: Mail, href: 'mailto:laomphannya240@gmail.com', label: 'Email' },
+    { icon: FaFacebook, href: 'https://www.facebook.com/share/1HrMEfuaEj/?mibextid=wwXIfr', label: 'Facebook' },
   ];
 
   return (

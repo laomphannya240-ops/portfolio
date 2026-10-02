@@ -17,16 +17,7 @@ export const projects = [
     tech: ['React', 'Tailwind CSS', 'Laravel', 'PostgreSQL'],
     image: '/images/studentClass.jpg',
     github: 'https://github.com/laomphannya240-ops/Student_manager_system',
-    live: 'https://example.com',
+    
   },
-  {
-    id: 3,
-    title: 'Weather Dashboard',
-    description:
-      'Beautiful weather dashboard with location-based forecasts and interactive charts.',
-    tech: ['React', 'OpenWeather API', 'Chart.js'],
-    image: '/images/yaBlack.jpg',
-    github: 'https://github.com',
-    live: 'https://example.com',
-  },
+  
 ];

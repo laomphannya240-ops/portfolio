@@ -16,14 +16,19 @@ export default function Home() {
       <div className="container-custom relative z-10 grid md:grid-cols-2 gap-12 items-center px-6 mx-auto">
         {/* Left: Text */}
         <div className="text-center md:text-left animate-slide-up">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+            <span className="bg-linear-to-r from-blue-700 via-indigo-700 to-purple-700 bg-clip-text text-transparent">
+              Welcome to my portfolio
+            </span>
+          </h1>
           {/* Glassmorphism Badge */}
-          <span className="text-xl md:text-2xl lg:text-3xl inline-block text-sm font-semibold text-blue-300 bg-blue-900/40 border border-blue-500/30 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
-            Hello, I'm
+          <span className="text-xl md:text-2xl lg:text-3xl inline-block  font-semibold text-blue-300 bg-blue-900/40 border border-blue-500/30 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
+            I'm
           </span>
           
           {/* ពណ៌អក្សរឈ្មោះ (Gradient ភ្លឺលើផ្ទៃងងឹត) */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
               <TypingText text="Laom Phannya" />
             </span>
           </h1>
@@ -34,7 +39,7 @@ export default function Home() {
 
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
             <Button href="#projects" size="lg">
-              View My Work
+              View Projects
             </Button>
             {/* Outline button អោយស៊ីជាមួយផ្ទៃងងឹត */}
             <Button href="#contact" variant="outline" size="lg" className="border-gray-500 text-gray-200 hover:bg-white/10">
@@ -48,7 +53,7 @@ export default function Home() {
         <div className="flex justify-center md:justify-end mt-10 md:mt-0">
           <div className="relative animate-float">
             {/* Glow Effect ជុំវិញរូបភាព */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full blur-2xl opacity-40 scale-105 animate-glow-pulse" />
+            <div className="absolute inset-0 bg-linear-to-tr from-blue-500 to-purple-500 rounded-full blur-2xl opacity-40 scale-105 animate-glow-pulse" />
             <img
               src="/images/yanobg.png"
               alt="Laom Phannya"
